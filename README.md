@@ -2,4 +2,4 @@
 
 ## To-do
 
-[ ] Use smart pointers instead of raw pointers
+- [ ] Use smart pointers instead of raw pointers
