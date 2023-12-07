@@ -1,0 +1,1 @@
+add_executable(spell-checker "main.cpp")
