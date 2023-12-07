@@ -6,3 +6,5 @@ target_sources(
     "levenshtein.hpp"
     "levenshtein.cpp"
 )
+
+add_subdirectory("trie")
