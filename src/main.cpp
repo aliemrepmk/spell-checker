@@ -1,7 +1,12 @@
 #include <iostream>
 
+#include "trie/trie.hpp"
+
 int main() {
-  std::cout << "Test" << std::endl;
+  Trie trie;
+
+  trie.insert("hello");
+  trie.insert("world");
 
   return 0;
 }

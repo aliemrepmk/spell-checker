@@ -11,8 +11,6 @@ set_target_properties(
   spell-checker
   PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${BINARY_DIR}"
-    CXX_STANDARD 20
-    CXX_STANDARD_REQUIRED 17
 )
 
 configure_file(
