@@ -16,7 +16,6 @@ Checks: >
   -readability-magic-numbers,
   -readability-named-parameter,
   -bugprone-easily-swappable-parameters,
-  -readability-function-cognitive-complexity
 
 WarningsAsErrors: "*"
 
