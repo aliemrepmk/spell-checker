@@ -9,6 +9,8 @@
 
 class Dictionary {
  public:
+  const Trie& get_dictionary() const;
+
   void load_from_file(std::string_view filename);
 
  private:
