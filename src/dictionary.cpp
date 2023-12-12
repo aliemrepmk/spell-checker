@@ -1,5 +1,7 @@
 #include "dictionary.hpp"
 
+const Trie& Dictionary::get_dictionary() const { return m_trie; }
+
 void Dictionary::load_from_file(std::string_view filename) {
   std::ifstream input_file(filename.data(), std::ios::binary);
 

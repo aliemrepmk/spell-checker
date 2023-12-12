@@ -13,7 +13,7 @@ void Trie::insert(std::string_view str) {
   current->set_end();
 }
 
-bool Trie::search(std::string_view str) {
+bool Trie::search(std::string_view str) const {
   TrieNode* current = m_root.get();
 
   for (char ch : str) {
