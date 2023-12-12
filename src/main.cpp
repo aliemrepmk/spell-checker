@@ -1,12 +1,9 @@
-#include <iostream>
-
-#include "trie/trie.hpp"
+#include "dictionary.hpp"
 
 int main() {
-  Trie trie;
+  Dictionary dictionary;
 
-  trie.insert("hello");
-  trie.insert("world");
-
+  dictionary.load_from_file("dictionary.txt");
+  
   return 0;
 }
