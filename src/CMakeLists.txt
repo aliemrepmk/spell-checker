@@ -5,6 +5,8 @@ target_sources(
   PRIVATE
     "levenshtein.hpp"
     "levenshtein.cpp"
+    "dictionary.hpp"
+    "dictionary.cpp"
 )
 
 add_subdirectory("trie")
