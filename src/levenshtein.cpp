@@ -33,3 +33,13 @@ int levenshtein::calculate_distance(std::string_view source,
 
   return current_row[target_length];
 }
+
+bool levenshtein::Comparator::operator()(std::string_view str1,
+                                         std::string_view str2) const {
+  return calculate_distance(str1, m_target) <
+         calculate_distance(str2, m_target);
+}
+
+void levenshtein::Comparator::set_target(std::string target) {
+  m_target = std::move(target);
+}
