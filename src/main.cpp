@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 #include "dictionary.hpp"
 
@@ -7,7 +8,16 @@ int main() {
 
   dictionary.load_from_file("dictionary.txt");
 
-  std::cout << dictionary.get_dictionary().search("classroom") << std::endl;
+  std::string word;
+  do {
+    std::cout << "Please enter a word: ";
+    std::cin >> word;
+
+    if (!dictionary.get_dictionary().search(word)) {
+      std::cout << "Word is mispelled" << std::endl;
+    }
+
+  } while (word != "exit");
 
   return 0;
 }
