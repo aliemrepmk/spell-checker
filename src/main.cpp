@@ -27,6 +27,7 @@ int main() {
         std::cout << "\tSuggestion: " << suggestion << std::endl;
       }
     }
+
   } while (word != "exit");
 
   return 0;
