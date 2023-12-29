@@ -4,7 +4,10 @@
 #include <string_view>
 #include <utility>
 
+#define LEVENSHTEIN_MAX_DISTANCE 4
+
 namespace levenshtein {
+
 int calculate_distance(std::string_view source, std::string_view target);
 
 class Comparator {
