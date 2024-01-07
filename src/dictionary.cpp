@@ -84,6 +84,10 @@ std::vector<std::string> Dictionary::get_suggestions(
       continue;
     }
 
+    if (modified_word.length() < MIN_LENGTH_OF_WORD) {
+      continue;
+    }
+
     suggestions.insert(modified_word);
   }
 
