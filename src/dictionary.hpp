@@ -11,6 +11,8 @@
 #include "levenshtein.hpp"
 #include "trie/trie.hpp"
 
+#define MIN_LENGTH_OF_WORD 2
+
 class Dictionary {
  public:
   const Trie& get_dictionary() const;
