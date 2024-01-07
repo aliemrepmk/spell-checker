@@ -25,7 +25,7 @@ cd spell-checker
 make
 ```
 
-#### Running
+### How to run?
 
 Build binary files locates in `bin` folder in root folder.
 
