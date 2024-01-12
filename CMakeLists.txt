@@ -11,7 +11,7 @@ set_target_properties(
   PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${BINARY_DIR}"
     CXX_STANDARD 17
-    CXX_STANDARD_REQUIRED 17
+    CXX_STANDARD_REQUIRED ON
 )
 
 configure_file(

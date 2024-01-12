@@ -90,8 +90,12 @@ std::vector<std::string> Dictionary::get_suggestions(
     suggestions.insert(modified_word);
   }
 
-  std::vector<std::string> sorted_suggestions{
-      suggestions.begin(), std::next(suggestions.begin(), 5)};
+  std::vector<std::string> sorted_suggestions;
+
+  auto it = suggestions.begin();
+  for (int i = 0; i < 5 && it != suggestions.end(); ++i, ++it) {
+    sorted_suggestions.push_back(*it);
+  }
 
   levenshtein::Comparator comparator;
   comparator.set_target(word);
