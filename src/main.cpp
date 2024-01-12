@@ -7,7 +7,9 @@
 int main() {
   Dictionary dictionary;
 
-  dictionary.load_from_file("dictionary.txt");
+  if (!dictionary.load_from_file("dictionary.txt")) {
+    return -1;
+  }
 
   std::string word;
   do {

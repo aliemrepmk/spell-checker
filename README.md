@@ -10,7 +10,7 @@ Dictionary contains 370105 English words.
 - Suitable C++ compiler.
 - Any build tool CMake supports. (Make or ninja prefered)
 
-#### CMake
+### CMake
 
 ```sh
 cd spell-checker
@@ -19,18 +19,17 @@ cd build
 make
 ```
 
-#### Make
+### Make
+
 ```sh
 cd spell-checker
 make
 ```
 
-### How to run?
-
 Build binary files locates in `bin` folder in root folder.
 
 ```sh
-cd spell-checker
+cd ..
 cd bin
 ./spell-checker
 ```
@@ -40,3 +39,4 @@ cd bin
 - [x] Use smart pointers instead of raw pointers.
 - [x] Implement suggestion algorithm.
 - [x] Compare suggestions by distance with Levenshtein.
+- [ ] Adding colors for better understanding.
