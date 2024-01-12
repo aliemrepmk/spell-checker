@@ -34,6 +34,7 @@ Build binary files locates in `bin` folder in root folder.
 
 ```sh
 cd bin
+chmod +x ./spell-checker
 ./spell-checker
 ```
 
