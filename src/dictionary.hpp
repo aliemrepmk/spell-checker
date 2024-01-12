@@ -19,7 +19,7 @@ class Dictionary {
 
   std::vector<std::string> get_suggestions(const std::string& word) const;
 
-  void load_from_file(std::string_view filename);
+  bool load_from_file(std::string_view filename);
 
  private:
   Trie m_trie;

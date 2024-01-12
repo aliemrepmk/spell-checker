@@ -99,12 +99,12 @@ std::vector<std::string> Dictionary::get_suggestions(
   return sorted_suggestions;
 }
 
-void Dictionary::load_from_file(std::string_view filename) {
+bool Dictionary::load_from_file(std::string_view filename) {
   std::ifstream input_file(filename.data(), std::ios::binary);
 
   if (!input_file.is_open()) {
     std::cerr << "Could not open dictionary file: " << filename << std::endl;
-    return;
+    return false;
   }
 
   std::cout << "Reading dictionary file..." << std::endl;
@@ -117,10 +117,12 @@ void Dictionary::load_from_file(std::string_view filename) {
   if (!input_file.eof() && input_file.fail()) {
     std::cerr << "Error while reading dictionary file: " << filename
               << std::endl;
-    return;
+    return false;
   }
 
   std::cout << "Completed." << std::endl;
 
   input_file.close();
+
+  return true;
 }
