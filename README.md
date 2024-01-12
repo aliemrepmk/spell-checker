@@ -40,3 +40,4 @@ cd bin
 - [x] Implement suggestion algorithm.
 - [x] Compare suggestions by distance with Levenshtein.
 - [ ] Adding colors for better understanding.
+- [ ] Improve suggestions. ([source](https://stackoverflow.com/a/2294926/12463055))
