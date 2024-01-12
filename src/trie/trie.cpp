@@ -2,7 +2,7 @@
 
 Trie::Trie() : m_root{std::make_unique<TrieNode>()} {}
 
-void Trie::insert(std::string_view str) {
+void Trie::insert(const std::string& str) {
   TrieNode* current = m_root.get();
 
   for (char ch : str) {
@@ -13,7 +13,7 @@ void Trie::insert(std::string_view str) {
   current->set_end();
 }
 
-bool Trie::search(std::string_view str) const {
+bool Trie::search(const std::string& str) const {
   TrieNode* current = m_root.get();
 
   for (char ch : str) {

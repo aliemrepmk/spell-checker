@@ -5,7 +5,6 @@
 #include <iostream>
 #include <set>
 #include <string>
-#include <string_view>
 #include <vector>
 
 #include "levenshtein.hpp"
@@ -19,7 +18,7 @@ class Dictionary {
 
   std::vector<std::string> get_suggestions(const std::string& word) const;
 
-  bool load_from_file(std::string_view filename);
+  bool load_from_file(const std::string& filename);
 
  private:
   Trie m_trie;

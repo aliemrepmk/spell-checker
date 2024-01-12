@@ -1,6 +1,6 @@
 CC = g++
 
-CPPFLAGS = -std=c++20
+CPPFLAGS = -std=c++17 -Wall
 INCLUDES = -Isrc
 
 SRC_DIR = src

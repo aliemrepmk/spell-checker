@@ -6,7 +6,9 @@ std::vector<std::string> Dictionary::get_suggestions(
     const std::string& word) const {
   std::set<std::string> suggestions;
 
-  for (int i = 0; i < word.length(); ++i) {
+  int word_length = static_cast<int>(word.length());
+
+  for (int i = 0; i < word_length; ++i) {
     for (char ch = 'a'; ch <= 'z'; ++ch) {
       std::string modified_word = word;
       modified_word[i] = ch;
@@ -23,7 +25,7 @@ std::vector<std::string> Dictionary::get_suggestions(
     }
   }
 
-  for (int i = 0; i < word.length(); ++i) {
+  for (int i = 0; i < word_length; ++i) {
     for (char ch = 'a'; ch <= 'z'; ++ch) {
       std::string modified_word = word;
       modified_word.insert(i, 1, ch);
@@ -40,7 +42,7 @@ std::vector<std::string> Dictionary::get_suggestions(
     }
   }
 
-  for (int i = 0; i < word.length(); ++i) {
+  for (int i = 0; i < word_length; ++i) {
     std::string modified_word = word;
     modified_word.erase(i, 1);
     if (!get_dictionary().search(modified_word)) {
@@ -55,7 +57,7 @@ std::vector<std::string> Dictionary::get_suggestions(
     suggestions.insert(modified_word);
   }
 
-  for (int i = 0; i < word.length() - 1; ++i) {
+  for (int i = 0; i < word_length - 1; ++i) {
     std::string modified_word = word;
     std::swap(modified_word[i], modified_word[i + 1]);
     if (!get_dictionary().search(modified_word)) {
@@ -70,7 +72,7 @@ std::vector<std::string> Dictionary::get_suggestions(
     suggestions.insert(modified_word);
   }
 
-  for (int i = 1; i < word.length() + 1; ++i) {
+  for (int i = 1; i < word_length + 1; ++i) {
     std::string modified_word = word.substr(0, i);
     if (!get_dictionary().search(modified_word)) {
       continue;
@@ -99,7 +101,7 @@ std::vector<std::string> Dictionary::get_suggestions(
   return sorted_suggestions;
 }
 
-bool Dictionary::load_from_file(std::string_view filename) {
+bool Dictionary::load_from_file(const std::string& filename) {
   std::ifstream input_file(filename.data(), std::ios::binary);
 
   if (!input_file.is_open()) {

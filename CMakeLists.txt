@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.20)
 
 project(spell-checker LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 17)
 set(BINARY_DIR "${CMAKE_SOURCE_DIR}/bin/")
 
 add_subdirectory("src")
@@ -11,7 +10,7 @@ set_target_properties(
   spell-checker
   PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${BINARY_DIR}"
-    CXX_STANDARD 20
+    CXX_STANDARD 17
     CXX_STANDARD_REQUIRED 17
 )
 

@@ -2,15 +2,26 @@
 
 Dictionary contains 370105 English words.
 
+## Known bugs
+
+- Infinite loop and segmentation fault on clang 14.0.0
+
 ## How to compile?
 
 ### Requirements
 
-- CMake (version >= 3.20)
-- Suitable C++ compiler.
-- Any build tool CMake supports. (Make or ninja prefered)
+- Suitable C++ compiler (g++ with C++17 support recommended)
+  - We used `g++ 11.4.0 on Ubuntu 22.04`. Other compilers like `clang` throws errors such as segmentation fault or infinite loops.
+- CMake or Make (recommended)
 
-### CMake
+### Using Make
+
+```sh
+cd spell-checker
+make
+```
+
+### Using CMake
 
 ```sh
 cd spell-checker
@@ -19,17 +30,9 @@ cd build
 make
 ```
 
-### Make
-
-```sh
-cd spell-checker
-make
-```
-
 Build binary files locates in `bin` folder in root folder.
 
 ```sh
-cd ..
 cd bin
 ./spell-checker
 ```

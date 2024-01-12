@@ -1,7 +1,7 @@
 #pragma once
 
 #include <memory>
-#include <string_view>
+#include <string>
 
 #include "trie_node.hpp"
 
@@ -9,9 +9,9 @@ class Trie {
  public:
   Trie();
 
-  void insert(std::string_view str);
+  void insert(const std::string& str);
 
-  bool search(std::string_view str) const;
+  bool search(const std::string& str) const;
 
  private:
   std::unique_ptr<TrieNode> m_root;

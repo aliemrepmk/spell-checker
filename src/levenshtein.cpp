@@ -1,12 +1,9 @@
 #include "levenshtein.hpp"
 
-#include <algorithm>
-#include <vector>
-
-int levenshtein::v1::calculate_distance(std::string_view source,
-                                        std::string_view target) {
-  size_t source_length = source.length();
-  size_t target_length = target.length();
+int levenshtein::v1::calculate_distance(const std::string& source,
+                                        const std::string& target) {
+  int source_length = static_cast<int>(source.length());
+  int target_length = static_cast<int>(target.length());
 
   std::vector<int> previous_row(target_length + 1, 0);
   std::vector<int> current_row(target_length + 1, 0);
@@ -34,20 +31,23 @@ int levenshtein::v1::calculate_distance(std::string_view source,
   return current_row[target_length];
 }
 
-int levenshtein::calculate_distance(std::string_view source,
-                                    std::string_view target) {
-  int d[source.length() + 1][target.length() + 1];
+int levenshtein::calculate_distance(const std::string& source,
+                                    const std::string& target) {
+  int source_length = static_cast<int>(source.length());
+  int target_length = static_cast<int>(target.length());
 
-  for (int i = 0; i < source.length(); ++i) {
+  int d[source_length + 1][target_length + 1];
+
+  for (int i = 0; i < source_length; ++i) {
     d[i][0] = i;
   }
 
-  for (int i = 0; i < target.length(); ++i) {
+  for (int i = 0; i < target_length; ++i) {
     d[0][i] = i;
   }
 
-  for (int i = 1; i <= source.length(); ++i) {
-    for (int j = 1; j <= target.length(); ++j) {
+  for (int i = 1; i <= source_length; ++i) {
+    for (int j = 1; j <= target_length; ++j) {
       int cost = 0;
 
       if (source[i - 1] != target[j - 1]) {
@@ -67,8 +67,8 @@ int levenshtein::calculate_distance(std::string_view source,
   return d[source.length()][target.length()];
 }
 
-bool levenshtein::Comparator::operator()(std::string_view str1,
-                                         std::string_view str2) const {
+bool levenshtein::Comparator::operator()(const std::string& str1,
+                                         const std::string& str2) const {
   return calculate_distance(str1, m_target) <
          calculate_distance(str2, m_target);
 }
